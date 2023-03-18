@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>brunoblog – final_project_notebook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">brunoblog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+<section id="consequences-of-algorithmic-bias" class="level1">
+<h1>Consequences of Algorithmic Bias</h1>
+<section id="dh-140-final-project" class="level2">
+<h2 class="anchored" data-anchor-id="dh-140-final-project">DH 140 Final Project</h2>
+<section id="author-bruno-romani" class="level3">
+<h3 class="anchored" data-anchor-id="author-bruno-romani">Author : Bruno Romani</h3>
+</section>
+<section id="date-03202023" class="level3">
+<h3 class="anchored" data-anchor-id="date-03202023">Date : 03/20/2023</h3>
+</section>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this project, I will be taking a closer look at the topic of <strong>algorithmic bias</strong>. In a world where artificial intelligence technology continues to grow exponentially with time, addressing the concern of algorithmic bias may be informational to several minority cultures. To begin with, algorithmic bias is defined to be errors or unfair choices made by machine learning algorithms. These biases arise due to a variety of reasons, some include incorrect choice of predictor variables and biased training data.</p>
+<p>The <a href="https://www.science.org/doi/10.1126/science.aax2342">article</a> “Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations” released by <em>Science</em> examines how an algorithm used in healthcare can perpetuate racial bias. The article focuses on an algorithm that is used to identify patients who may benefit from additional healthcare services or lower costs. The author dives deep into one specific algorithm used in the industry, which he found in his study to exhibit racial bias. It presented racial bias by assigning a higher risk score to White patients over Black patients, even though they had similar scores throughout the different variables the algorithm would use to determine health risk score. A description of the dataset and how it was obtained can be found under this <a href="https://gitlab.com/labsysmed/dissecting-bias">link</a>. The model is trained on 160 different independent variables, with the risk score being the target variable.</p>
+<p>Some of the reasons as to why I chose this dataset to analyze include having a deeper understanding of algorithms that are racially biased, and determining if this algorithm in specific is racially biased. As a first generation student and person of color, taking a closer look at the data and how this algorithm works will help me understand how algorithms can be not only racially biased, but could lead inaccurate decisions and outcomes that may lead to people of color have immense disadvantages in several aspects of life, not only the health care system.</p>
+<p>Therefore, with this data set, I will take a high level overview of analysis to explore how risk scores are being assigned to patients. Specifically, I will try to answer the question: What factors could make this algorithm racially biased? How is it affecting patients of color? Does this have a long term effect on patients of color?</p>
+<p>I will try to answer this question beginning with an exploratory data analysis of the data set. After getting more insight into the data and determining which variables can be useful in predicting risk score for a patient, I will try to apply a machine learning model (linear regression) which will show me how well it performs with the variables selected and the weight of each variable on predicting the risk score of a patient. Also, they measure risk score through the total of medical expenses variable (cost_t). Therefore, the algorithm is trained with cost_t as the dependent or target variable.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h3>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>health_risk <span class="op">=</span> pd.read_csv(<span class="st">'data_new.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>health_risk.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>(48784, 160)</code></pre>
+</div>
+</div>
+<p>Since we have a great amount of predictor variables that are trained in this machine learning algorithm, let us take a closer look at some of the general variables in this dataset to determine which variables could greatly affect a patient’s risk score. Variables such as:</p>
+<ul>
+<li>COST_T: The patient’s total medical costs.</li>
+<li>RACE: The patient’s self-reported race. Data only includes Black/White patients</li>
+<li>GAGNE_SUM_T: The total number of chronic illnesses presented by the patient within the study period.</li>
+<li>DEM_FEMALE: This is an indicator if the patient is a female or not. 1 for female, 0 for male</li>
+<li>RISK_SCORE_T: This is the score given to a patient based on the algorithm.</li>
+</ul>
+<p>For more information on different variables, a data dictionary is available provided in the link from earlier.</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>general_pred <span class="op">=</span> [<span class="st">'risk_score_t'</span>, <span class="st">'cost_t'</span>, <span class="st">'race'</span>, <span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>health_general <span class="op">=</span> health_risk[general_pred]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>health_general.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(48784, 5)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>health_general <span class="op">=</span> health_general.dropna()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>health_general.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>(48784, 5)</code></pre>
+</div>
+</div>
+<p>There are 48,784 patients represented as rows in the data, and 5 pieces of information about each patient represented as columns. We saw NaN values in some of the columns earlier when we first imported the data, but after passing the dropna function to our dataframe, we can see that there were no NaN values in our subset data frame. Let us do some exploratory data analysis now, specifically the correlation between the variables in a heat map.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change race column to binary or encode it from string to integers (1 White, 0 Black)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>le <span class="op">=</span> LabelEncoder()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>health_general[<span class="st">'race'</span>] <span class="op">=</span> le.fit_transform(health_general[<span class="st">'race'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># correlation matrix heat map</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sns.heatmap(health_general.corr(), cbar<span class="op">=</span><span class="va">True</span>, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The plot above is a heatmap which shows the correlations between each variable in our general subset data. Correlation can tell us the strength and relationship between each variable, and we want to see which variables have moderately strong correlations between each other. This is to take a closer look at each of those variables and see how they could affect the prediction of risk score for a patient.</p>
+<p>From the heatmap, we will consider moderately strong correlation coefficients to have a correlation value of 0.35 or greater. We can see that our predictor (risk_score_t) has moderately strong correlations with number of chronic illnesses (gagne_sum_t) and patient’s total medical cost (cost_t). Also, we can see that the number of chronic illnesses has a moderately strong correlation with total medical cost for a patient. Let us take a closer look at these variables and see how they can affect the risk score prediction.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> health_general, x <span class="op">=</span> <span class="st">'cost_t'</span>, y <span class="op">=</span> <span class="st">'risk_score_t'</span>, hue <span class="op">=</span> <span class="st">'race'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Risk Score'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Cost'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Risk Score vs. Cost'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.legend(labels<span class="op">=</span>[<span class="st">'White'</span>, <span class="st">'Black'</span>])</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Based on the scatter plot of risk score vs.&nbsp;cost, we can see that patients’ risk score tends to, on average, go up as total cost of medical expenses by patients goes up. We can differentiate how race may be a variable to consider as well when evaluating risk score with cost, but let us take a better look at this difference with the next plot below.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first we have to change race back to a categorical variable with categories "Black" and "White"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>health_general[<span class="st">'race'</span>] <span class="op">=</span> [<span class="bu">int</span>(i) <span class="cf">for</span> i <span class="kw">in</span> health_general[<span class="st">'race'</span>]]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mapping <span class="op">=</span> {<span class="dv">1</span> : <span class="st">'white'</span> , <span class="dv">0</span> : <span class="st">'black'</span>}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>health_general[<span class="st">'race'</span>] <span class="op">=</span> health_general[<span class="st">'race'</span>].<span class="bu">map</span>(mapping)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>health_general[<span class="st">'race'</span>]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> health_general, x <span class="op">=</span> <span class="st">'cost_t'</span>, hue <span class="op">=</span> <span class="st">'race'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">25000</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">3000</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># value counts for each race</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>health_general[<span class="st">'race'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>white    43202
+black     5582
+Name: race, dtype: int64</code></pre>
+</div>
+</div>
+<p>Even though the proportion of Black patients in this data set is less than White patients, we can see that there is a higher proportion of White patients having higher costs than Black patients. For example, since patients of White race seem to have higher total costs for overall medical expenses, what if these expenses are to be aligned with non-critical expenses such as plastic surgery? Race shows a sign that it may be a factor in predicting risk score.</p>
+<p>Let us closely investigate race now with the number of illnesses per patient. Below I will show a boxplot to show the differences between both races.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>grouped_race_illness <span class="op">=</span> health_general.groupby([<span class="st">'race'</span>])[<span class="st">'gagne_sum_t'</span>].mean()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> health_general, y <span class="op">=</span> <span class="st">'race'</span>, x <span class="op">=</span> <span class="st">'gagne_sum_t'</span>, hue <span class="op">=</span> <span class="st">'race'</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Chronic Illnesses'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Race'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Number of Chronic Illnesses per race'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>grouped_race_illness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>race
+black    2.055536
+white    1.263900
+Name: gagne_sum_t, dtype: float64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-12-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Based on the boxplot above, we can see that there is a difference in the average number of chronic illnesses of patients that are Black and White. The average number of chronic illnesses for Black patients is higher than of White patients. Also, we can see that the Black patient’s 75th-100th percent quartile range is larger than the White patient’s 75th-100th percent quartile in the number of chronic illnesses. This shows another sign as to how these two variables (race and number of chronic illnesses) may affect the risk score of a patient. Also, from the point made earlier with White patients having higher costs than Black patients, how could they have higher costs if on average Black patients have a higher average number of chronic illnesses? We will investigate this question once we have all of our variables selected for our model to fit.</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> health_general, y <span class="op">=</span> <span class="st">'cost_t'</span>, x <span class="op">=</span> <span class="st">'gagne_sum_t'</span>, hue <span class="op">=</span> <span class="st">'race'</span>, errorbar <span class="op">=</span> <span class="va">None</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cost'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Chronic Illnesses'</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Cost vs. Number of Chronic Illnesses'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.legend(labels<span class="op">=</span>[<span class="st">'White'</span>, <span class="st">'Black'</span>])</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Taking a closer look at our last two variables that have a moderately strong correlation (Cost and number of chronic illnesses) we can see that White patients on average have higher medical costs than Black patients up to a total of nine chronic illnesses. However, we see a change past 9 chronic illnesses where we see the total cost of medical expenses for Black patients is greater than the total cost of White patients. However, there is a lot of variation between both races and the confidence interval after nine chronic illnesses has a much wider range of costs (on some of the bins, White patients have higher costs than Black patients). We removed this from the plot because it does not seem fit to show the difference between cost prices and number of chronic illnesses in the first 9 points of number of chronic illnesses.</p>
+<p>After performing a general exploratory data analysis, I will move on to select the features for my model. In respect to my model, I will perform linear regression on the variables I select. Specifically, I will have the total cost of medical expenses as my dependent variable (target variable), and my independent variables will be selected in my next section that will discuss feature selection.</p>
+</section>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<section id="feature-selection" class="level4">
+<h4 class="anchored" data-anchor-id="feature-selection">Feature Selection</h4>
+<p>Before I begin to model, I will perform a systematic feature selection to select the variables for my model. Since there are 160 independent variables in my model, finding the best variables for my model through an automated function will make this process extensive. Therefore, I will select variables that are the most general variables to the algorithm’s model, and will move forward to apply a systematic feature selection in which I will choose the best variables that give me the best average cross validation score with our model. We would like to select the model with the highest cross validation score because it will give me a rough idea as to which variables the model best performs on with unseen data from our training dataset.</p>
+<p>Having mentioned the training dataset, I will split my data into training and test dataset. This training dataset will train my model with this data, and we will try to predict scores with the test set to determine how well our model performed. Also, as mentioned in the introduction, we will be using total medical costs (cost_t) as our dependent variable and the rest will be our potential independent variables for our model.</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> linear_model</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> model_selection</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The variables I will be selecting to model with are the general variables from my exploratory data analysis (‘race’, ‘gagne_sum_t’, ‘dem_female’), and I selected three other variables that may have a potential in affecting risk score (‘cost_avoidable_t’, ‘gagne_sum_tm1’, ‘program_enrolled_t’). Below I will provide a definition for each:</p>
+<ul>
+<li>COST_AVOIDABLE_T: Total cost of avoidable medical expenditures.</li>
+<li>GAGNE_SUM_TM1: Total number of active illnesses.</li>
+<li>PROGRAM_ENROLLED_T: Indicator for patients enrolled in the program or not.</li>
+</ul>
+<p>To begin with, I will create a cleaning function that will clean my dataset with the given columns I pass it to the function. This will clean my data only on the columns I want to subset from the dataset.</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let us select the general columns that we will use and apply a cleaning function that will clean our data</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we also want to encode variables that are categories into integers </span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>health_risk <span class="op">=</span> pd.read_csv(<span class="st">'data_new.csv'</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'cost_t'</span>,<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cost_avoidable_t'</span>, <span class="st">'gagne_sum_tm1'</span>, <span class="st">'program_enrolled_t'</span>]</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_data(df, cols):</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df[cols]</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df.dropna()</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'race'</span>] <span class="op">=</span> le.fit_transform(df[<span class="st">'race'</span>])</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>health_risk <span class="op">=</span> clean_data(health_risk, cols)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>health_risk.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>cost_t</th>
+      <th>gagne_sum_t</th>
+      <th>dem_female</th>
+      <th>race</th>
+      <th>cost_avoidable_t</th>
+      <th>gagne_sum_tm1</th>
+      <th>program_enrolled_t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1200.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2600.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>500.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1300.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1100.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>health_risk.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>(48784, 7)</code></pre>
+</div>
+</div>
+<p>After subsetting and cleaning my data, we can now move forward with splitting my data into train/test sets and doing a systematic feature selection. Ideally, we would be keeping our variables from the exploratory data analysis to fit our model, and will select the other three variables if they increase our overall cross validation scores. We will create the different combinations for the columns we would like to subset from our training data and model with. Since I will be keeping the variables from my exploratory data analysis in the list of combinations, this leaves us with a total of 8 list combinations to see which subset of variables will give us the best mean cross validation score.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting seed for reporducibility and apply train/test function to split data </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1234</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>health_train, health_test <span class="op">=</span> train_test_split(health_risk, test_size <span class="op">=</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function to calcualte mean cross validation score from </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cv_scores(cols):</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"training with columns "</span> <span class="op">+</span> <span class="bu">str</span>(cols))</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> LinearRegression()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cross_val_score(model, health_train[cols], health_train[<span class="st">'cost_t'</span>], cv <span class="op">=</span> <span class="dv">5</span>).mean() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># column combinations to see which variables give the greatest mean cross validation score when modeling training data</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>column_comb <span class="op">=</span> [[<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'cost_avoidable_t'</span>, <span class="st">'program_enrolled_t'</span>, <span class="st">'gagne_sum_tm1'</span>],</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'gagne_sum_tm1'</span>, <span class="st">'program_enrolled_t'</span>],</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'cost_avoidable_t'</span>, <span class="st">'program_enrolled_t'</span>],</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'cost_avoidable_t'</span>, <span class="st">'gagne_sum_tm1'</span>],</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'cost_avoidable_t'</span>],</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'gagne_sum_tm1'</span>],</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'program_enrolled_t'</span>],</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>              [<span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>]]</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> column_comb:</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> cv_scores(i)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"CV score is "</span> <span class="op">+</span> <span class="bu">str</span>(np.<span class="bu">round</span>(score, <span class="dv">3</span>)))</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>training with columns ['gagne_sum_t', 'dem_female', 'race', 'cost_avoidable_t', 'program_enrolled_t', 'gagne_sum_tm1']
+CV score is 0.706
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'gagne_sum_tm1', 'program_enrolled_t']
+CV score is 0.129
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'cost_avoidable_t', 'program_enrolled_t']
+CV score is 0.705
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'cost_avoidable_t', 'gagne_sum_tm1']
+CV score is 0.706
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'cost_avoidable_t']
+CV score is 0.705
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'gagne_sum_tm1']
+CV score is 0.126
+training with columns ['gagne_sum_t', 'dem_female', 'race', 'program_enrolled_t']
+CV score is 0.129
+training with columns ['gagne_sum_t', 'dem_female', 'race']
+CV score is 0.126</code></pre>
+</div>
+</div>
+<p>Based on the scores we received above, we can see that our model performed best with the columns - ‘gagne_sum_t’, ‘dem_female’, ‘race’, ‘cost_avoidable_t’, ‘gagne_sum_tm1’. The model does not differ much as compared to two other lists of variable combinations, but we will pick this set because it has the least variables. We do this to make our model less complex. We will move forward with fitting our model with these variables since they score best in our systematic feature selection.</p>
+</section>
+<section id="modeling" class="level4">
+<h4 class="anchored" data-anchor-id="modeling">Modeling</h4>
+<p>Let us now create our X and y for train/test to be able to fit our model with the linear regression function.</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating independent and dependent variables</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'cost_t'</span>, <span class="st">'gagne_sum_t'</span>, <span class="st">'dem_female'</span>, <span class="st">'race'</span>, <span class="st">'cost_avoidable_t'</span>, <span class="st">'gagne_sum_tm1'</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>health_train <span class="op">=</span> health_train[cols]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>health_test <span class="op">=</span> health_test[cols]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> health_train.drop(<span class="st">'cost_t'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> health_train[<span class="st">'cost_t'</span>]</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>X_test <span class="op">=</span> health_test.drop(<span class="st">'cost_t'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> health_test[<span class="st">'cost_t'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will now fit our training data to our model and display the coefficient of determination scores.</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit data to linear regression model</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>LR <span class="op">=</span> linear_model.LinearRegression()</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>LR.fit(X_train, y_train)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(LR.score(X_train, y_train), LR.score(X_test, y_test))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.7079527773610754 0.9266021681495551</code></pre>
+</div>
+</div>
+<p>Based on the results, our model did pretty well on the testing data set. Even though we did not get as high of a score in our training set, this shows that our model is not overfitting the data. We can see this by getting a lower training score than our test score. This indicated that our model is able to generalize well to new and unseen data (testing data).</p>
+</section>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>We will now take a closer look at the results of our model, specifically our coefficeints. We want to see which variables contribute most to our model in predicting risk score.</p>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get coefficients from fit model </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>LR.fit(X_train, y_train).coef_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>array([ 587.45140809, 1002.14821293,  509.748747  ,    1.19313914,
+        514.53466781])</code></pre>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create table to clearly show results </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {<span class="st">'Predictors'</span> : [<span class="st">'Chronic Illnesses'</span>, <span class="st">'Gender'</span>, <span class="st">'Race'</span>, <span class="st">'Avoided Costs'</span>, <span class="st">'Active Chronic Illnesses'</span>],</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>          <span class="st">'Coefficients'</span> : [ <span class="fl">587.45140809</span>, <span class="fl">1002.14821293</span>, <span class="fl">509.748747</span>, <span class="fl">1.19313914</span>, <span class="fl">514.53466781</span>]}</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> pd.DataFrame(results)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>results_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Predictors</th>
+      <th>Coefficients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Chronic Illnesses</td>
+      <td>587.451408</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Gender</td>
+      <td>1002.148213</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Race</td>
+      <td>509.748747</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Avoided Costs</td>
+      <td>1.193139</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Active Chronic Illnesses</td>
+      <td>514.534668</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize <span class="op">=</span> (<span class="dv">15</span>,<span class="dv">5</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> results_df, x <span class="op">=</span> <span class="st">'Predictors'</span>, y <span class="op">=</span> <span class="st">'Coefficients'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>If we focus on the categorical variables, such as gender or race, we can see that they have a great deal in determining overall costs - which then correlates with overall risk score for a patient. For example, taking a look at race, we know that in our dataset 0 denotes Black and 1 White. This shows that if the patient is White, the model will automatically increase the overall cost of a patient by roughly 510 dollars (obtained this from the coefficient and multiplying it by 1). This explains why there may be an issue between Black and White patients getting different risk scores, even though they might have similar risk symptoms. Also, we can see the same for gender. If a patient is a female (denoted as 1 in our dataset) we see that they would automatically roughly get an additional 1002 dollars added to their total cost. This shows that females may, on average, get higher risk scores than males.</p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>health_risk <span class="op">=</span> pd.read_csv(<span class="st">'data_new.csv'</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sns.relplot(data <span class="op">=</span> health_risk, x<span class="op">=</span><span class="st">'gagne_sum_t'</span>, y<span class="op">=</span><span class="st">'cost_t'</span>, col<span class="op">=</span><span class="st">'dem_female'</span>, hue <span class="op">=</span> <span class="st">'race'</span>, </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                hue_order <span class="op">=</span> [<span class="st">'black'</span>, <span class="st">'white'</span>], kind<span class="op">=</span><span class="st">'line'</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>f.set_axis_labels( <span class="st">"Number of chronic illnesses"</span>, <span class="st">"Risk Score"</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>f.facet_axis(<span class="dv">0</span>, <span class="dv">0</span>).set_title(<span class="st">"Male "</span>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>f.facet_axis(<span class="dv">0</span>, <span class="dv">1</span>).set_title(<span class="st">"Female"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>f.legend.set_title(<span class="st">"Race"</span>)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>f.legend.texts[<span class="dv">0</span>].set_text(<span class="st">"Black"</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>f.legend.texts[<span class="dv">1</span>].set_text(<span class="st">"White"</span>)</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Final_Project_Notebook_files/figure-html/cell-25-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Since gender and race are both variables that have a strong influence on cost/risk score, let us take a closer look at them and how they affect the number of chronic illnesses. We can see here, both races seem to have equal differences in risk scores. However, if we take a closer look at the first 10 chronic illnesses, we can see that White male patients seem to have a higher risk score over Black male patients. For females, we can say the same for the first 8 chronic diseases. However, there is much variation in this plot and cannot fully see a difference between both races.</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>Based on our results, we can see that the gender and race coefficients have a significant factor in predicting cost. Since the risk score a patient receives is a function of the model’s prediction of the total medical costs which will be incurred by that individual, we can see that patients of Black race will receive a lower total for medical costs, which will ultimately lead to a lower risk score. This shows a huge disparity between White and Black patients, in which, if you are White, you can get a $579.90 expected extra medical cost, which can lead to a higher overall risk score. This leads to a systematic bias in the algorithm.</p>
+<p>Therefore, if this model is still used to calculate risk scores for patients, Black patients are being held back to getting much better benefits since they have lower risk scores. This matter is not only affecting Black patients’ long term health, but also is a systemic issue that will continue to persist until it is solved. This algorithm will continue to have a long term effect on patients of color, and this is only one algorithm analyzed out of the many algorithms used in place in the healthcare industry.</p>
+<p>Artificial intelligence will continue to exponentially grow with time, and we will have to adapt to it as well. However, algorithms that have bias, such as racial bias, must be trained with the proper data. The people behind building these models must now take a closer look at how these models are built and with what kind of data. For example, obtaining data from a representative and diverse population may be one way to solve algorithmic bias. Another way to help solve this issue is for the creators of the models to be explicit and transparent with their methods. With clear documentation on the algorithm, other people may be able to give another eye to the model and provide insights into the model if it has bias or not. Algorithmic bias is here to stay for the near future when building models, but we can minimize it by being aware of these models and understanding their functionality.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
